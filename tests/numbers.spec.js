@@ -14,7 +14,7 @@ describe('1 -Testando a função `numbers` ', () => {
   });
 
   it("numbers([ ]); // Retorna: false", () => {
-    expect(numbers([2, 'errado', 5])).toEqual(false);
+    expect(numbers([' '])).toBe(false);
   });
 
 });
