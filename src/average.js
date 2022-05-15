@@ -11,30 +11,24 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-*/
+    */
 
 const average = (numeros) => {
-  // console.log(`Os numeros do array são estes: ${numeros.length}`);
-  for (const semNum of numeros) {
-    if (typeof semNum === 'string') {
-      return undefined;
-      // console.log(`semNum entrou nesta constante ${semNum}`);
-    }
+  if (numeros.length === 0) {
+    return undefined;
   }
-  let numberTrat = 0;
-  for (const numMedia of numeros) {
-    if (numMedia === 0) {
+
+  let soma = 0;
+  let media = 0;
+  for (const num of numeros) {
+    if (typeof num === 'string') {
       return undefined;
-      // console.log(`ENTROU NO ZERO - ${numMedia}`);
     }
-    // console.log(`Os numeros do array são estes no for "numMedia": ${numeros.length}`);
-    numberTrat += numMedia;
-    // console.log(`a soma é: ${numberTrat}`);
-    let media = 0; 
-    media = Math.round(numberTrat / numeros.length);
-    return media;
-    // console.log(`a media é: ${media}`);
+    soma += num;
   }
+  media = soma / numeros.length;
+  return Math.round(media);
+  // console.log(`a media é ${mediaFin}`);
 };
 
-module.exports = average;  
+module.exports = average;
